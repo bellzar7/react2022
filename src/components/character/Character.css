@@ -1,0 +1,10 @@
+.asd{
+    width: 90%;
+    height: 300px;
+    background: #61dafb;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 10px;
+}
