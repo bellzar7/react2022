@@ -24,6 +24,11 @@ function App() {
             desc={'asdqwe qwe dsa cvbsg'}
             picture={'https://i.pinimg.com/originals/94/c8/ba/94c8ba735b7846c5e321ff299d0a425a.jpg'}
         />
+      <Character
+          name={'Magie'}
+          desc={'asdqwe qwe dsa cvbsg'}
+          picture={'https://upload.wikimedia.org/wikipedia/uk/9/9d/Maggie_Simpson.png'}
+      />
     </div>
   );
 }
