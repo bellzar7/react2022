@@ -5,7 +5,6 @@ let {name, desc, picture} = props
         <div className={'divFromApp'}>
             <h2>{name}</h2>
             <p>{desc}</p>
-
             <img src={picture} alt=""/>
         </div>
     )
