@@ -1,10 +1,7 @@
 export default function Post({item}){
-
-
-
     return (
         <div>
-            {item.id} - {item.name} - {item.address.city}
+            <b>User id</b>-{item.userId} <b>Post id</b> - {item.id} - {item.body}
         </div>
     )
 }

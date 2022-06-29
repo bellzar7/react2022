@@ -1,11 +1,9 @@
 import './App.css';
-import {Users} from "./components";
 
+import {getPosts, Users} from "./components";
 
-
-
-
-
+import {useEffect, useState} from "react";
+import Post from "./components/post/Post";
 
 
 /*Отримати всіх користувачів з jsonplaceholder, вивести їх.
@@ -13,11 +11,27 @@ import {Users} from "./components";
 Запити робити через axios, організація коду через сервіси*/
 
 function App() {
-  return (
-    <div >
-<Users/>
-    </div>
-  );
+
+    let [posts, setPost] = useState([]);
+
+    const getPostsId = (id) => {
+        getPosts(id).then(value => setPost([...value]))
+    }
+
+    useEffect(() => {
+
+
+    }, [])
+
+    return (
+        <div>
+            <h2>users posts</h2>
+            {posts.map(value => <Post key={value.id} item={value}/>)}
+            <hr/>
+            <br/>
+            <Users getPostsId={getPostsId}/>
+        </div>
+    );
 }
 
 export default App;

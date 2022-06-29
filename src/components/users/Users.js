@@ -1,11 +1,12 @@
 import {useEffect, useState} from "react";
 
 import {getUsers} from "../services/users.api.services";
+import {User} from "../index";
 
 
 
 
-export default function Users() {
+export default function Users({getPostsId}) {
 
     let [users, setUsers] = useState([])
 
@@ -17,7 +18,7 @@ export default function Users() {
 
     return (
         <div>
-            {users.map()}
+            {users.map(value => <User key={value.id} item={value} getPostsId={getPostsId}/>)}
         </div>
     )
 }
