@@ -3,7 +3,7 @@ import './App.css';
 import {getPosts, Users} from "./components";
 
 import {useEffect, useState} from "react";
-import Post from "./components/post/Post";
+import Posts from "./components/posts/Posts";
 
 
 /*Отримати всіх користувачів з jsonplaceholder, вивести їх.
@@ -26,7 +26,7 @@ function App() {
     return (
         <div>
             <h2>users posts</h2>
-            {posts.map(value => <Post key={value.id} item={value}/>)}
+            <Posts posts={posts}/>
             <hr/>
             <br/>
             <Users getPostsId={getPostsId}/>
