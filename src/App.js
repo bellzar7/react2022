@@ -1,6 +1,7 @@
 import './App.css';
-import {Users} from "./components";
+import {getPosts, getUser, Posts, UserDetails, Users} from "./components";
 
+import {useState} from "react";
 
 
 /*Вивести всіх юзерів, біля кожного юзера кнопка GetDetails.
@@ -9,13 +10,28 @@ import {Users} from "./components";
 Структура схематично зображена в картинці поруч з цим файлом*/
 
 
-
 function App() {
-  return (
-    <div >
-<Users/>
-    </div>
-  );
+
+    let [user, setUser] = useState(null);
+    let [posts, setPosts] = useState([]);
+
+    const getUserId = (id) => {
+        getUser(id).then(value => setUser({...value}));
+    };
+
+    const getUserIdForPosts = (id) => { getPosts(id).then(value => setPosts([...value]))}
+
+    return (
+        <div>
+            <Users getUserId={getUserId}/>
+            {
+                user && <UserDetails getUserId={getUserIdForPosts} user={user}/>
+            }
+            {
+                posts && <Posts posts={posts}/>
+            }
+        </div>
+    );
 }
 
 export default App;
