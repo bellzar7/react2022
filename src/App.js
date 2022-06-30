@@ -23,10 +23,12 @@ function App() {
 
     return (
         <div>
-            <Users getUserId={getUserId}/>
-            {
-                user && <UserDetails getUserId={getUserIdForPosts} user={user}/>
-            }
+          <div className={'box'}>
+              <div className={'left'}><Users getUserId={getUserId}/></div>
+              <div className={'right'}>{
+                  user && <UserDetails getUserId={getUserIdForPosts} user={user}/>
+              }</div>
+          </div>
             {
                 posts && <Posts posts={posts}/>
             }
