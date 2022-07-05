@@ -13,7 +13,7 @@ export default function Car({car, deleteCar, setCarForUpdate}) {
                 <div>year: {year}</div>
             </div>
             <div className={'tools'}>
-                <button onClick={()=> setCarForUpdate(car)}>Edit</button>
+                <button onClick={() => setCarForUpdate(car)}>Edit</button>
                 <button onClick={() => deleteCar(id)}>Delete</button>
             </div>
         </div>
