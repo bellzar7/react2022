@@ -1,14 +1,12 @@
 const baseUrl = 'https://jsonplaceholder.typicode.com';
 
-let apiService (baseUrl) {
-  this.getAll = (endPoint) => {
-        fetch(`${baseUrl}/${endPoint}`)
+export default function apiService() {
+    this.getAllUsers = () => {
+        fetch(`${baseUrl}/users`)
             .then(value => value.json())
     }
-    this.getSingle = (endPoint, id) => {
-        fetch(`${baseUrl}/${endPoint}/${id}`)
+    this.getAllPosts = () => {
+        fetch(`${baseUrl}/posts`)
             .then(value => value.json())
     }
 }
-
-export {apiService}
