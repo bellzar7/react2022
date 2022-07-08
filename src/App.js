@@ -3,6 +3,7 @@ import Layout from "./pages/Layout";
 import {useRoutes} from "react-router";
 import Users from "./pages/Users";
 import Posts from "./pages/Posts";
+import UserDetails from "./pages/UserDetails";
 
 
 function App() {
@@ -12,8 +13,20 @@ function App() {
             path: '/',
             element: <Layout/>,
             children: [
-                {element: <Users/>, path: 'users'},
-                {element: <Posts/>, path: 'posts'}
+                {
+                    element: <Users/>,
+                    path: 'users',
+                    children: [
+                        {
+                            element: <UserDetails/>,
+                            path: ':id'
+                        }
+                    ]
+                },
+                {
+                    element: <Posts/>,
+                    path: 'posts'
+                }
             ]
         }
     ]
