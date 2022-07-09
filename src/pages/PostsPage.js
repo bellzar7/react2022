@@ -1,8 +1,15 @@
-export default function PostsPage(){
+import PostsComponent from "../components/PostsComponent";
+import {Outlet, useParams} from "react-router-dom";
+
+export default function PostsPage() {
+
+    const {id} = useParams();
 
     return (
         <div>
-    posts
+            <Outlet/>
+            <PostsComponent id={id}/>
+
         </div>
     )
 }

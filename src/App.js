@@ -6,6 +6,7 @@ import AboutPage from "./pages/AboutPage";
 import UsersPage from "./pages/UsersPage";
 import PostsPage from "./pages/PostsPage";
 import CommentsPage from "./pages/CommentsPage";
+import PostDetailsPage from "./pages/PostDetailsPage";
 
 
 function App() {
@@ -23,18 +24,22 @@ function App() {
                 </ul>
             </div>
 
-<div>
-    <h2>content</h2>
-    <Routes>
-        <Route path={'/'} element={<HomePage/>}/>
-        <Route path={'/layout'} element={<LayoutPage/>}>
-            <Route path={'users'} element={<UsersPage/>}/>
-            <Route path={'posts'} element={<PostsPage/>}/>
-            <Route path={'comments'} element={<CommentsPage/>}/>
-        </Route>
-        <Route path={'/about'} element={<AboutPage/>}/>
-    </Routes>
-</div>
+            <div>
+                <h2>content</h2>
+                <Routes>
+                    <Route path={'/'} element={<HomePage/>}/>
+                    <Route path={'/layout'} element={<LayoutPage/>}>
+                        <Route path={'users'} element={<UsersPage/>}>
+                            <Route path={':id'} element={<PostsPage/>}/>
+                        </Route>
+                        <Route path={'posts'} element={<PostsPage/>}>
+                            <Route path={'details'} element={<PostDetailsPage/>}/>
+                        </Route>
+                        <Route path={'comments'} element={<CommentsPage/>}/>
+                    </Route>
+                    <Route path={'/about'} element={<AboutPage/>}/>
+                </Routes>
+            </div>
 
 
         </div>
