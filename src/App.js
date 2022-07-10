@@ -1,5 +1,9 @@
 import './App.css';
-import {Link, Routes, Route} from "react-router-dom";
+import {Link, Route, Routes} from "react-router-dom";
+import ToDosPage from "./pages/ToDosPage";
+import AlbumsPage from "./pages/AlbumsPage";
+import CommentsPage from "./pages/CommentsPage";
+import PostPage from "./pages/PostPage";
 
 /*реалізувати 3 маршрути
 todos - при переході на який тягнуться всі todo з https://jsonplaceholder.typicode.com/todos
@@ -25,7 +29,11 @@ function App() {
 
 
         <Routes>
-            <Route path={'/todos'}/>
+            <Route path={'/todos'} element={<ToDosPage/>}/>
+            <Route path={'/albums'} element={<AlbumsPage/>}/>
+            <Route path={'/comments'} element={<CommentsPage/>}>
+                <Route path={'post'} element={<PostPage/>}/>
+            </Route>
 
         </Routes>
 
