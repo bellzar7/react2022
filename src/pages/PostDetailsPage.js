@@ -1,9 +1,9 @@
 import {useLocation} from "react-router-dom";
 import PostDetailsComponent from "../components/PostDetailsComponent";
 
-export default function PostDetailsPage(){
+export default function PostDetailsPage() {
 
-const {state} = useLocation();
+    const {state} = useLocation();
 
     return (
         <div>

@@ -7,6 +7,7 @@ import UsersPage from "./pages/UsersPage";
 import PostsPage from "./pages/PostsPage";
 import CommentsPage from "./pages/CommentsPage";
 import PostDetailsPage from "./pages/PostDetailsPage";
+import CommentPage from "./pages/CommentPage";
 
 
 function App() {
@@ -30,12 +31,16 @@ function App() {
                     <Route path={'/'} element={<HomePage/>}/>
                     <Route path={'/layout'} element={<LayoutPage/>}>
                         <Route path={'users'} element={<UsersPage/>}>
-                            <Route path={':id'} element={<PostsPage/>}/>
+                            <Route path={':id'} element={<PostsPage/>}>
+                                <Route path={'details'} element={<PostDetailsPage/>}/>
+                            </Route>
                         </Route>
                         <Route path={'posts'} element={<PostsPage/>}>
                             <Route path={'details'} element={<PostDetailsPage/>}/>
                         </Route>
-                        <Route path={'comments'} element={<CommentsPage/>}/>
+                        <Route path={'comments'} element={<CommentsPage/>}>
+                            <Route path={'details'} element={<CommentPage/>}/>
+                        </Route>
                     </Route>
                     <Route path={'/about'} element={<AboutPage/>}/>
                 </Routes>
