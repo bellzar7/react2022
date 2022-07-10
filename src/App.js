@@ -32,7 +32,7 @@ function App() {
             <Route path={'/todos'} element={<ToDosPage/>}/>
             <Route path={'/albums'} element={<AlbumsPage/>}/>
             <Route path={'/comments'} element={<CommentsPage/>}>
-                <Route path={'post'} element={<PostPage/>}/>
+                <Route path={':postId'} element={<PostPage/>}/>
             </Route>
 
         </Routes>

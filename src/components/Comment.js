@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom";
+
 export default function Comment({item}){
 
 
@@ -7,7 +9,7 @@ export default function Comment({item}){
             {item.name}
             {item.email}
             {item.body}
-            <button>Post current comment</button>
+           <Link to={item.postId.toString()}>Post current comment</Link>
             <hr/>
         </div>
     )
