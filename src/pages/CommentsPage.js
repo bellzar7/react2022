@@ -1,4 +1,4 @@
-import Comments from "../components/Comments";
+import Comments from "../components/comments/Comments";
 import {Outlet} from 'react-router-dom'
 
 export default function CommentsPage(){

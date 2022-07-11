@@ -1,4 +1,4 @@
-import ToDosComponent from "../components/ToDosComponent";
+import ToDosComponent from "../components/todos/ToDosComponent";
 
 export default function ToDosPage(){
     return (

@@ -1,12 +1,13 @@
 import {useEffect, useState} from "react";
 import Comment from "./Comment";
+import {getComments} from "../../services/api.service";
 
 export default function Comments(){
 
     const [comments, setComments] = useState([]);
 
     useEffect(()=> {
-        fetch('https://jsonplaceholder.typicode.com/comments').then(value => value.json()).then(value => setComments([...value]))
+       getComments().then(value => setComments([...value]))
     },[])
 
     return (

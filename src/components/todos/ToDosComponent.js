@@ -1,12 +1,13 @@
 import {useEffect, useState} from "react";
 import ToDoComponent from "./ToDoComponent";
+import {getTodos} from "../../services/api.service";
 
 export default function ToDosComponent(){
 
     let [todos, setTodos] = useState([]);
 
     useEffect(()=> {
-        fetch('https://jsonplaceholder.typicode.com/todos').then(value => value.json()).then(value => setTodos([...value]))
+        getTodos().then(value => setTodos([...value]))
     }, [])
 
 
