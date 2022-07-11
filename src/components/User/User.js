@@ -1,6 +1,6 @@
 import Posts from "../Posts/Posts";
 
-export default function User({user, userIdState}){
+export default function User({user, userIdState}) {
     const [userId, setUserId] = userIdState;
 
     const {id, name, username} = user;
@@ -12,8 +12,8 @@ export default function User({user, userIdState}){
                 <div>name: {name}</div>
                 <div>username: {username}</div>
             </div>
-            <button onClick={()=>setUserId(id)}>ShowPosts</button>
-            {userId===id&&<Posts userId={id}/>}
+            <button onClick={() => setUserId(id)}>ShowPosts</button>
+            {userId === id && <Posts userId={id}/>}
         </div>
     )
 }
