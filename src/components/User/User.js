@@ -1,7 +1,9 @@
+import {Link, useNavigate} from "react-router-dom";
+import Button from "../Button/Button";
 
+export default function User({user}) {
 
-export default function User({user, userIdState}) {
-    const [userId, setUserId] = userIdState;
+    const navigate = useNavigate();
 
     const {id, name, username} = user;
 
@@ -12,7 +14,11 @@ export default function User({user, userIdState}) {
                 <div>name: {name}</div>
                 <div>username: {username}</div>
             </div>
-            <button onClick={() => setUserId(id)}>ShowPosts</button>
+            {/*<button onClick={() => navigate(`${id}`, {state: user, replace: true})}>User Details</button>*/}
+            {/*<Link to={`${id}`} state={user} replace={true}>*/}
+            {/*    <button>User Details</button>*/}
+            {/*</Link>*/}
+            <Button to={id.toString()} state={user}>User Details</Button>
 
         </div>
     )
