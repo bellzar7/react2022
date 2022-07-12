@@ -1,15 +1,20 @@
 import './App.css';
-import Users from "./components/Users/Users";
-import {Route,Routes} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
+import {MainLayout} from "./layouts";
+import {NotFoundPage, PostsPage, UsersPage} from "./pages";
 
 
 function App() {
     return (
         <div>
             <Routes>
-                <Route/>
+                <Route path={'/'} element={<MainLayout/>}>
+                    <Route path={'users'} element={<UsersPage/>}/>
+                    <Route path={'posts'} element={<PostsPage/>}/>
+                </Route>
+                    <Route path={'*'} element={<NotFoundPage/>}/>
             </Routes>
-            <Users/>
+
 
         </div>
     );

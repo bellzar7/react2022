@@ -1,4 +1,4 @@
-export * from './User/User';
-export * from './Users/Users';
-export * from './Post/Post';
-export * from './Posts/Posts';
+import Header from "./Headers/Header";
+import Post from "./Post/Post";
+import User from "./User/User";
+ export {User, Post, Header}
