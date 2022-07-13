@@ -4,33 +4,31 @@ import User from "./User";
 
 class Users extends Component {
 
-    //useState -> state
-    state = {users: []}
+    index = 0;
+    state = {users: [], user: {}}
 
 
     constructor(props) {
         super(props);
-        console.log('constructor');
     }
 
-    // useEffect
     componentDidMount() {
-        console.log('componentDidMount')
         this.userApiService = new UserApiService();
-
-        // this.userApiService.getUsers().then(value => this.setState({...this.state, users: value}));
-
-        // setUsers() -> this.setState(newObj)
         this.userApiService.getUsers().then(value => this.setState({users: value}));
 
     }
 
-    // return -> render
     render() {
-        console.log('render');
         return (
             <div>
                 {this.state.users.map(value => <User key={value.id} item={value}/>)}
+                <button onClick={() => {
+                    this.state.users.pop();
+
+                    this.setState({users: this.state.users});
+                }}>delete last user
+                </button>
+
             </div>
         );
     }
