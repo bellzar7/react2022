@@ -1,14 +1,25 @@
-import React from 'react';
+import React, {createContext} from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+let defaultValue = {
+    prop1: "value1",
+    foo: function () {
+        console.log("bar")
+    }
+};
+
+export let MyContext = createContext(defaultValue)
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <React.StrictMode>
+        <MyContext.Provider value={defaultValue}>
+            <App/>
+        </MyContext.Provider>
+    </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
