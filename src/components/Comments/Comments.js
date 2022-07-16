@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {commentsService} from "../../services";
-import Comment from "../Comment";
+import Comment from "../Comment/Comment";
 
 class Comments extends Component {
 
