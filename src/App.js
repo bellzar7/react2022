@@ -1,5 +1,9 @@
 import './App.css';
 import {useDispatch, useSelector} from "react-redux";
+import {Link, Route, Routes} from "react-router-dom";
+import HomePage from "./components/HomePage";
+import UsersComponents from "./components/UsersComponents";
+import PostsComponents from "./components/PostsComponents";
 
 
 function App() {
@@ -9,20 +13,20 @@ function App() {
 
     return (
         <div>
-            {state}
-            <button onClick={()=> {
-                dispatch({type: 'INC', payload: 1})
-            }}>INCrement</button>
+<ul>
+    <li><Link to={'/'}>state home</Link></li>
+    <li><Link to={'/users'}>users</Link></li>
+    <li><Link to={'posts'}>posts</Link></li>
+</ul>
 
-            <button onClick={() => {
-                dispatch({type: 'DEC', payload: 1})
-            }}>DECrement
-            </button>
+            <Routes>
+                <Route path={'/'} element={<HomePage/>}/>
+                <Route path={'/users'} element={<UsersComponents/>}/>
+                <Route path={'/posts'} element={<PostsComponents/>}/>
+            </Routes>
 
-            <button onClick={() => {
-                dispatch({type: 'RES'})
-            }}>RESet
-            </button>
+
+
         </div>
     );
 }
