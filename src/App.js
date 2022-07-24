@@ -1,14 +1,13 @@
 import './App.css';
-import {Count1Tools, Count2Tools, ShowCounts} from "./components";
+import {CarForm, Cars} from "./components";
 
 
 function App() {
     return (
         <div>
-            <ShowCounts/>
+            <CarForm/>
             <hr/>
-            <Count1Tools/>
-            <Count2Tools/>
+            <Cars/>
         </div>
     );
 }
