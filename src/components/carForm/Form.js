@@ -6,7 +6,7 @@ import {carActions} from "../../redux/slices";
 const Form = () => {
 
     const {reset, setValue, register, handleSubmit} = useForm();
-    const {carForUpdate} = useSelector(state => state.cars);
+    const {carForUpdate, errors} = useSelector(state => state.cars);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -32,6 +32,7 @@ const Form = () => {
             <input type="text" placeholder={'price'} {...register('price')}/>
             <input type="text" placeholder={'year'} {...register('year')}/>
             <button>{carForUpdate ? 'update' : 'create'}</button>
+            {errors && <div>{JSON.stringify(errors)}</div>}
         </form>
     );
 };
