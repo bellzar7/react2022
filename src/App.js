@@ -9,10 +9,10 @@ function App() {
         <div>
            <Routes>
                <Route path={'/'} element={<MainLayout/>}>
-                   <Route index element={<Navigate to={'/login'}/>}/>
-                   <Route path={'/login'} element={<LoginPage/>}/>
-                   <Route path={'/register'} element={<RegisterPage/>}/>
-                   <Route path={'/cars'} element={<CarsPage/>}/>
+                   <Route index element={<Navigate to={'login'}/>}/>
+                   <Route path={'login'} element={<LoginPage/>}/>
+                   <Route path={'register'} element={<RegisterPage/>}/>
+                   <Route path={'cars'} element={<CarsPage/>}/>
 
                </Route>
            </Routes>
