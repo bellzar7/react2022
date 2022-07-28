@@ -39,21 +39,21 @@ const carSlice = createSlice({
         }
     },
     extraReducers: (builder) =>
-            builder
-                .addCase(getAll.fulfilled, (state, action) => {
-                    state.error = null
-                    state.cars = action.payload.data
-                    state.prev = action.payload.prev
-                    state.next = action.payload.next
-                })
-                .addCase(getAll.rejected, (state, action) => {
-                    state.error = action.payload
-                })
-                .addCase(updateById.fulfilled, (state, action) => {
-                    const currentCar = state.cars.find(value => value.id === action.payload.id);
-                    Object.assign(currentCar, action.payload);
-                    state.carForUpdate = null;
-                })
+        builder
+            .addCase(getAll.fulfilled, (state, action) => {
+                state.error = null
+                state.cars = action.payload.data
+                state.prev = action.payload.prev
+                state.next = action.payload.next
+            })
+            .addCase(getAll.rejected, (state, action) => {
+                state.error = action.payload
+            })
+            .addCase(updateById.fulfilled, (state, action) => {
+                const currentCar = state.cars.find(value => value.id === action.payload.id);
+                Object.assign(currentCar, action.payload);
+                state.carForUpdate = null;
+            })
 
 
 });
