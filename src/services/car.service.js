@@ -3,7 +3,7 @@ import {urls} from "../constants";
 import {authService} from "./auth.service";
 
 const carService = {
-    getAll: (page=1) => axiosService.get(urls.cars, {params:{page}}),
+    getAll: (page = 1) => axiosService.get(urls.cars, {params: {page}}),
     updateById: (id, data) => axiosService.put(`${urls.cars}/${id}`, data),
     deleteById: (id) => axiosService.delete(`${urls.cars}/${id}`)
 }

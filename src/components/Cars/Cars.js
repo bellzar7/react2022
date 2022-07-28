@@ -14,6 +14,7 @@ const Cars = () => {
 
     useEffect(() => {
         dispatch(carActions.getAll({page: query.get('page')}))
+
     }, [dispatch, query])
 
     const prevPage = () => {

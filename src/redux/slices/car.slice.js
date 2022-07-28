@@ -22,7 +22,7 @@ const getAll = createAsyncThunk(
     'carSlice/getAll',
     async ({page}, {rejectWithValue}) => {
         try {
-            const {data} = await carService.getAll({page});
+            const {data} = await carService.getAll(page);
             return data
         } catch (e) {
             return rejectWithValue(e.response.data)
@@ -38,7 +38,7 @@ const carSlice = createSlice({
             state.carForUpdate = action.payload
         }
     },
-    extraReducers: (builder =>
+    extraReducers: (builder) =>
             builder
                 .addCase(getAll.fulfilled, (state, action) => {
                     state.error = null
@@ -55,7 +55,7 @@ const carSlice = createSlice({
                     state.carForUpdate = null;
                 })
 
-    )
+
 });
 
 const {reducer: carReducer, actions: {setCarForUpdate}} = carSlice;
