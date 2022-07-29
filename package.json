@@ -1,0 +1,23 @@
+{
+  "name": "react2022",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "typescript": "^4.7.4",
+    "axios": "^0.27.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bellzar7/react2022.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bellzar7/react2022/issues"
+  },
+  "homepage": "https://github.com/bellzar7/react2022#readme"
+}
